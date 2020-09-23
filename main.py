@@ -12,27 +12,27 @@ option3 = "finalize"
 # allows for the creation of new animals and the amount that exist
 class Animals():
     def __init__(self, amount, name):
-        self.num = amount
-        self.name = name
+        self.num = int(amount)
+        self.name = str(name)
 
 
 # creates a animal object
 def createanimal(usernam, usernum):
-    usernam = Animals(usernum, usernam)
+   usernam = Animals(usernum, usernam)
+   species[usernam] = usernum
 
-    species [usernam] = usernum
-
-    return usernam, species
+   return usernam, species
 
 
 # Allows for adding, checking, and finding of H
 def listoptions(op):
     h = 0
     total = 0
+
     # adds animals to the dictionary of species
     if str(option1) == str(op):
-        for animal in species:
-            print(repr(animal), species[animal])
+            print(species)
+
     # checks and prints the list of current elements in the dictionary
     elif str(option2) == str(op):
         while True:
@@ -51,6 +51,7 @@ def listoptions(op):
 
             else:
                 print("I didn't quite get that. Please try again! \n")
+
     # finalizes and calculates for H
     elif str(option3) == str(op):
         for animal in species:
